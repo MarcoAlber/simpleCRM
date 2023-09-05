@@ -6,9 +6,16 @@
           "simple-crm-efe59"
         ]
       }
+    },
+    "simple-crm-56f23": {
+      "hosting": {
+        "simple-crm": [
+          "simple-crm-56f23"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "simple-crm-efe59"
+    "default": "simple-crm-56f23"
   }
 }
