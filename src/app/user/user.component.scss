@@ -3,3 +3,56 @@
     bottom: 56px;
     right: 56px;
 }
+
+.user-table {
+    border-collapse: collapse;
+
+    th {
+        padding-top: 8px;
+        font-size: 16px;
+        text-align: start;
+
+        &:first-child {
+            padding-left: 16px;
+        }
+
+        &:last-child {
+            padding-right: 16px;
+        }
+    }
+
+    tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        &:first-child {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+            cursor: auto;
+
+            &:hover {
+                background-color: unset;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    td {
+        width: calc(100% / 3);
+        height: 48px;
+
+        &:first-child {
+            padding-left: 16px;
+        }
+
+        &:last-child {
+            padding-right: 16px;
+        }
+    }
+}
