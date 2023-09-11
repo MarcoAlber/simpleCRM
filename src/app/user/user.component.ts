@@ -20,12 +20,15 @@ export class UserComponent {
   loadUsers() {
     let userCollection = collection(this.firestore, 'users');
 
-    onSnapshot(userCollection, (usersData) => {
-      this.allUsers = usersData.docs.map((user) => user.data() as User);
+    onSnapshot(userCollection, (usersInfo) => {
+      this.allUsers = usersInfo.docs.map((userDoc) => {
+        let userData = userDoc.data() as User;
+        userData.id = userDoc.id;
+        return userData;
+      });
       console.log(this.allUsers);
     });
   }
-
 
   openDialog(): void {
     this.dialog.open(DialogAddUserComponent);
