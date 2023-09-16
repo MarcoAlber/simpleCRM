@@ -1,0 +1,49 @@
+<div class="dialog-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h1 mat-dialog-title>Add User</h1>
+    <div class="dialog-input-container" mat-dialog-content>
+        <mat-form-field>
+            <mat-label>First name</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.firstName" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Surname</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.surname" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>E-Mail</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.email" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Date of birth</mat-label>
+            <input [disabled]="loading" [(ngModel)]="dateOfBirth" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="dialog-input-container" mat-dialog-content>
+        <mat-form-field class="zipcode">
+            <mat-label>Zipcode</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.zipcode" matInput>
+        </mat-form-field>
+        <mat-form-field class="city">
+            <mat-label>City</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.city" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>Street + House No.</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.street" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button [disabled]="loading" mat-button [mat-dialog-close]="">Cancel</button>
+        <button [disabled]="loading" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>
+    </div>
+</div>

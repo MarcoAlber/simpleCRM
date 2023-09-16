@@ -19,9 +19,21 @@
 }
 
 .user-details {
+    display: flex;
+    flex-direction: column;
     margin-left: 32px;
 
     h2 {
         margin-bottom: 0;
     }
+}
+
+.user-detail-address {
+    padding: 16px 32px;
+}
+
+.edit-user-button {
+    position: absolute;
+    right: 0;
+    top: 0;
 }

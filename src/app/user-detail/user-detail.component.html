@@ -2,8 +2,22 @@
     <div class="user-detail-container">
         <img src="./assets/img/1.webp">
         <div class="user-details">
-            <h2>Max Mustermann</h2>
-            <span>email@email.de</span>
+            <h2>{{ currentUser.firstName }} {{ currentUser.surname }}</h2>
+            <span>{{ currentUser.email }}</span>
+            <span>{{ currentUser.dateOfBirth | date }}
+            </span>
         </div>
     </div>
+</mat-card>
+
+<mat-card class="user-detail-address">
+    <button [matMenuTriggerFor]="menu" mat-icon-button class="edit-user-button">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button (click)="editUser()" mat-menu-item>Edit</button>
+    </mat-menu>
+    <mat-card-title>Address</mat-card-title>
+    <span>{{ currentUser.street }}</span>
+    <span>{{ currentUser.zipcode }} {{ currentUser.city }}</span>
 </mat-card>

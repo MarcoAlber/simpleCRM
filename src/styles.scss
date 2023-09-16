@@ -11,3 +11,27 @@ body {
 .full-width {
     width: 100%;
 }
+
+.dialog-container {
+    position: relative;
+
+    mat-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.dialog-input-container {
+    display: flex;
+    gap: 16px;
+
+    .zipcode {
+        width: 35%;
+    }
+
+    .city {
+        width: calc(65% - 16px);
+    }
+}

@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
@@ -26,6 +27,7 @@ import { environment } from '../environments/environment';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     DashboardComponent,
     UserComponent,
     DialogAddUserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DialogEditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     MatCardModule,
     MatDialogModule,
     MatInputModule,
+    MatMenuModule,
     MatFormFieldModule,
     MatProgressBarModule,
     MatDatepickerModule,
