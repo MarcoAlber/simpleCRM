@@ -1,0 +1,15 @@
+<div class="news-container">
+  <mat-card *ngFor="let news of newsJson" class="news-card">
+    <mat-card-header>
+      <mat-card-title>{{ news["title"] }}</mat-card-title>
+      <mat-card-subtitle>{{ news["source"] }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="news-image" src="{{ news['banner_image'] }}">
+    <mat-card-content>
+      <p>{{ news["summary"] }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a href="{{ news['url'] }}" target="_blank"><button mat-button>READ MORE</button></a>
+    </mat-card-actions>
+  </mat-card>
+</div>

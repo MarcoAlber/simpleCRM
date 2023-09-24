@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Firestore, collection, doc, updateDoc } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
@@ -8,13 +8,17 @@ import { User } from 'src/models/user.class';
   templateUrl: './dialog-edit-user.component.html',
   styleUrls: ['./dialog-edit-user.component.scss']
 })
-export class DialogEditUserComponent {
+export class DialogEditUserComponent implements OnInit {
   user!: User;
   userID: any = '';
   dateOfBirth!: Date;
   loading = false;
 
   constructor(private firestore: Firestore, public dialogRef: MatDialogRef<DialogEditUserComponent>) { }
+
+  ngOnInit() {
+    this.dateOfBirth = new Date(this.user.dateOfBirth);
+  }
 
   async saveUser() {
     this.user.dateOfBirth = this.dateOfBirth.getTime();

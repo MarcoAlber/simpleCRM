@@ -28,6 +28,7 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     UserComponent,
     DialogAddUserComponent,
     UserDetailComponent,
-    DialogEditUserComponent
+    DialogEditUserComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
