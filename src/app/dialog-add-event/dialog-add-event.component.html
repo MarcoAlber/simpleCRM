@@ -1,0 +1,29 @@
+<div class="dialog-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h1 mat-dialog-title>Add Event</h1>
+    <div class="dialog-input-container" mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>Event name</mat-label>
+            <input [disabled]="loading" [(ngModel)]="event.name" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>Date</mat-label>
+            <input [disabled]="loading" [min]="today" [(ngModel)]="date" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <input [disabled]="loading" [(ngModel)]="event.description" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button [disabled]="loading" mat-button [mat-dialog-close]="">Cancel</button>
+        <button [disabled]="loading" mat-button (click)="saveEvent()" cdkFocusInitial>Save</button>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="dialog-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h1 mat-dialog-title>Add Company</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="saveCompany()">
+        <div class="dialog-input-container" mat-dialog-content>
+            <mat-form-field class="full-width">
+                <mat-label>Company name</mat-label>
+                <input [disabled]="loading" formControlName="name" matInput>
+            </mat-form-field>
+        </div>
+        <div mat-dialog-content>
+            <mat-form-field class="full-width">
+                <mat-label>E-Mail</mat-label>
+                <input [disabled]="loading" formControlName="email" matInput>
+            </mat-form-field>
+        </div>
+        <div class="dialog-input-container" mat-dialog-content>
+            <mat-form-field class="firstName">
+                <mat-label>Phone</mat-label>
+                <input [disabled]="loading" type="number" formControlName="phone" matInput>
+            </mat-form-field>
+            <mat-form-field class="surname">
+                <mat-label>Expenses (in $)</mat-label>
+                <input [disabled]="loading" type="number"
+                    onkeydown="return (event.keyCode!=188) && (event.keyCode!=189);" formControlName="expenses"
+                    matInput>
+            </mat-form-field>
+        </div>
+        <div class="dialog-input-container" mat-dialog-content>
+            <mat-form-field class="zipcode">
+                <mat-label>Zipcode</mat-label>
+                <input [disabled]="loading" type="number" formControlName="zipcode" matInput>
+            </mat-form-field>
+            <mat-form-field class="city">
+                <mat-label>City</mat-label>
+                <input [disabled]="loading" formControlName="city" matInput>
+            </mat-form-field>
+        </div>
+        <div mat-dialog-content>
+            <mat-form-field class="full-width">
+                <mat-label>Street + House No.</mat-label>
+                <input [disabled]="loading" formControlName="street" matInput>
+            </mat-form-field>
+        </div>
+        <div mat-dialog-actions>
+            <button [disabled]="loading" mat-button [mat-dialog-close]="">Cancel</button>
+            <button [disabled]="loading" [disabled]="!contactForm.valid" type="submit" mat-button
+                cdkFocusInitial>Save</button>
+        </div>
+    </form>
+</div>

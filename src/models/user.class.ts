@@ -3,7 +3,10 @@ export class User {
     surname: string;
     email: string;
     id: string;
-    dateOfBirth: number;
+    password: string;
+    birthday: number;
+    phone: number;
+    position: string;
     zipcode: number;
     city: string;
     street: string;
@@ -13,8 +16,11 @@ export class User {
         this.surname = obj ? obj.surname : '';
         this.email = obj ? obj.email : '';
         this.id = obj ? obj.id : '';
-        this.dateOfBirth = obj ? obj.dateOfBirth : '';
+        this.password = obj ? obj.password : '';
+        this.phone = obj ? obj.phone : '';
+        this.birthday = obj ? obj.birthday : '';
         this.zipcode = obj ? obj.zipcode : '';
+        this.position = obj ? obj.position : '';
         this.city = obj ? obj.city : '';
         this.street = obj ? obj.street : '';
     }
@@ -24,8 +30,11 @@ export class User {
             firstName: this.firstName,
             surname: this.surname,
             email: this.email,
+            phone: this.phone,
+            password: this.password,
             id: this.id,
-            dateOfBirth: this.dateOfBirth,
+            birthday: this.birthday,
+            position: this.position,
             zipcode: this.zipcode,
             city: this.city,
             street: this.street

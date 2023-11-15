@@ -11,18 +11,19 @@ import { User } from 'src/models/user.class';
 export class DialogEditUserComponent implements OnInit {
   user!: User;
   userID: any = '';
-  dateOfBirth!: Date;
+  birthday!: Date;
+  positions = ["backend", "frontend"];
   loading = false;
 
   constructor(private firestore: Firestore, public dialogRef: MatDialogRef<DialogEditUserComponent>) { }
 
   ngOnInit() {
-    this.dateOfBirth = new Date(this.user.dateOfBirth);
+    this.birthday = new Date(this.user.birthday);
   }
 
   async saveUser() {
-    this.user.dateOfBirth = this.dateOfBirth.getTime();
-    console.log('current User is', this.user.dateOfBirth);
+    this.user.birthday = this.birthday.getTime();
+    console.log('current User is', this.user.birthday);
     this.loading = true;
     let userCollection = collection(this.firestore, 'users');
     await updateDoc(doc(userCollection, this.userID), this.user.toJSON());

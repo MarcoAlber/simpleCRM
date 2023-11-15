@@ -1,49 +1,65 @@
 <div class="dialog-container">
     <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
     <h1 mat-dialog-title>Add User</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="saveUser()">
     <div class="dialog-input-container" mat-dialog-content>
-        <mat-form-field>
+        <mat-form-field class="firstName">
             <mat-label>First name</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.firstName" matInput>
+            <input [disabled]="loading" formControlName="firstName" matInput>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="surname">
             <mat-label>Surname</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.surname" matInput>
+            <input [disabled]="loading" formControlName="surname" matInput>
         </mat-form-field>
     </div>
     <div mat-dialog-content>
         <mat-form-field class="full-width">
             <mat-label>E-Mail</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.email" matInput>
+            <input [disabled]="loading" formControlName="email" matInput>
         </mat-form-field>
     </div>
-    <div mat-dialog-content>
-        <mat-form-field>
+    <div class="dialog-input-container" mat-dialog-content>
+        <mat-form-field class="input-birthday">
             <mat-label>Date of birth</mat-label>
-            <input [disabled]="loading" [(ngModel)]="dateOfBirth" matInput [matDatepicker]="picker">
+            <input [disabled]="loading" [max]="today" formControlName="birthday" matInput [matDatepicker]="picker">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="input-phone">
+            <mat-label>Phone</mat-label>
+            <input [disabled]="loading" type="tel" formControlName="phone" matInput>
         </mat-form-field>
     </div>
     <div class="dialog-input-container" mat-dialog-content>
         <mat-form-field class="zipcode">
             <mat-label>Zipcode</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.zipcode" matInput>
+            <input [disabled]="loading" formControlName="zipcode" matInput>
         </mat-form-field>
         <mat-form-field class="city">
             <mat-label>City</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.city" matInput>
+            <input [disabled]="loading" formControlName="city" matInput>
         </mat-form-field>
     </div>
     <div mat-dialog-content>
         <mat-form-field class="full-width">
             <mat-label>Street + House No.</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.street" matInput>
+            <input [disabled]="loading" formControlName="street" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>Job position</mat-label>
+            <mat-select formControlName="position">
+                <mat-option *ngFor="let position of positions" [value]="position">
+                    {{position}}
+                </mat-option>
+            </mat-select>
         </mat-form-field>
     </div>
     <div mat-dialog-actions>
         <button [disabled]="loading" mat-button [mat-dialog-close]="">Cancel</button>
-        <button [disabled]="loading" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>
+        <button [disabled]="loading" mat-button [disabled]="!contactForm.valid" type="submit" cdkFocusInitial>Save</button>
     </div>
+    </form>
 </div>

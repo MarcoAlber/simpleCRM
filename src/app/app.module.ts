@@ -18,6 +18,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
+import { MatSelectModule } from '@angular/material/select';
 import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -29,6 +30,15 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 import { NewsComponent } from './news/news.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { EventsComponent } from './events/events.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { CompanyDetailComponent } from './company-detail/company-detail.component';
+import { DialogAddCompanyComponent } from './dialog-add-company/dialog-add-company.component';
+import { DialogEditCompanyComponent } from './dialog-edit-company/dialog-edit-company.component';
+import { DialogAddEventComponent } from './dialog-add-event/dialog-add-event.component';
+import { DialogAddReviewComponent } from './dialog-add-review/dialog-add-review.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +48,15 @@ import { NewsComponent } from './news/news.component';
     DialogAddUserComponent,
     UserDetailComponent,
     DialogEditUserComponent,
-    NewsComponent
+    NewsComponent,
+    CompaniesComponent,
+    EventsComponent,
+    ReviewsComponent,
+    CompanyDetailComponent,
+    DialogAddCompanyComponent,
+    DialogEditCompanyComponent,
+    DialogAddEventComponent,
+    DialogAddReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +69,8 @@ import { NewsComponent } from './news/news.component';
     MatButtonModule,
     MatTooltipModule,
     MatCardModule,
+    ReactiveFormsModule,
+    MatSelectModule,
     MatDialogModule,
     MatInputModule,
     MatMenuModule,

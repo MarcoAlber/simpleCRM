@@ -24,4 +24,17 @@
     .city {
         width: calc(65% - 16px);
     }
+
+    .input-birthday {
+        width: 35%;
+    }
+
+    .input-phone {
+        width: calc(65% - 16px);
+    }
+
+    .firstName,
+    .surname {
+        width: 50%;
+    }
 }

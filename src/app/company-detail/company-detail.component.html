@@ -2,9 +2,9 @@
     <div class="user-detail-container">
         <img src="./assets/img/1.webp">
         <div class="user-details">
-            <h2>{{ currentUser.firstName }} {{ currentUser.surname }}</h2>
-            <span>{{ currentUser.email }}</span>
-            <span>{{ currentUser.birthday | date }}
+            <h2>{{ currentCompany.name }}</h2>
+            <span>{{ currentCompany.email }}</span>
+            <span>{{ currentCompany.phone}}
             </span>
         </div>
     </div>
@@ -15,9 +15,9 @@
         <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <button (click)="editUser()" mat-menu-item>Edit</button>
+        <button (click)="editCompany()" mat-menu-item>Edit</button>
     </mat-menu>
     <mat-card-title>Address</mat-card-title>
-    <span>{{ currentUser.street }}</span>
-    <span>{{ currentUser.zipcode }} {{ currentUser.city }}</span>
+    <span>{{ currentCompany.street }}</span>
+    <span>{{ currentCompany.zipcode }} {{ currentCompany.city }}</span>
 </mat-card>

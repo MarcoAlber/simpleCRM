@@ -1,0 +1,26 @@
+<div class="dialog-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h1 mat-dialog-title>Add Review</h1>
+    <div class="dialog-input-container" mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>Company name</mat-label>
+            <input [disabled]="loading" [(ngModel)]="review.name" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>Rating</mat-label>
+            <input [disabled]="loading" [(ngModel)]="review.rating" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>Review</mat-label>
+            <input [disabled]="loading" [(ngModel)]="review.text" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button [disabled]="loading" mat-button [mat-dialog-close]="">Cancel</button>
+        <button [disabled]="loading" mat-button (click)="saveReview()" cdkFocusInitial>Save</button>
+    </div>
+</div>

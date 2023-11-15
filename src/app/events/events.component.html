@@ -1,0 +1,12 @@
+<mat-card class="event-card" *ngFor="let event of allEvents" routerLink="{{event.id}}">
+    <div>
+        {{ event.name }}
+        {{ event.date | date }}
+        {{ event.description }}
+    </div>
+</mat-card>
+
+<button (click)="openDialog()" class="add-event-button" mat-fab color="primary" matTooltip="Add Event"
+    [matTooltipPosition]="'above'" aria-label="Example icon button with a delete icon">
+    <mat-icon>add</mat-icon>
+</button>

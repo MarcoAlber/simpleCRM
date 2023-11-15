@@ -1,0 +1,12 @@
+<mat-card class="review-card" *ngFor="let review of allReviews" routerLink="{{review.id}}">
+  <div>
+    {{ review.name }}
+    {{ review.rating }}
+    {{ review.text }}
+  </div>
+</mat-card>
+
+<button (click)="openDialog()" class="add-review-button" mat-fab color="primary" matTooltip="Add Review"
+  [matTooltipPosition]="'above'" aria-label="Example icon button with a delete icon">
+  <mat-icon>add</mat-icon>
+</button>
